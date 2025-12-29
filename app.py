@@ -1,3 +1,4 @@
+from sklearn.ensemble import RandomForestRegressor
 import streamlit as st
 import pickle
 from sklearn.preprocessing import StandardScaler
@@ -37,9 +38,10 @@ model = model_run(X,y)
 house_price = model.predict(final_value)[0]
 
 with st.spinner('Predicting House price'):
-  time.sleep(1)
+  time.sleep(2)
 msg = f'''House price is: $ {round(house_price*100000,2)}'''
 st.success(msg)
 
 st.markdown('''**Design and Developed by: Himanshu pal**''')
+
 
